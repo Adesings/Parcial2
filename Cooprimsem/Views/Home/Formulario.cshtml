@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "Formulario";
+}
+
+<fieldset>
+    <legend> Formulario Mantenedor de Vacas</legend>
+    @using (@Html.BeginForm("Guardar", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Diio
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("Diio", null, new { @class = "form-control", placeholder = "ingrese un codigo" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Nombre
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("nombre", null, new { @class = "form-control", placeholder = "ingrese un nombre" })
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Sexo
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("sexo", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Macho", Value=""},
+                        new SelectListItem{Text="Hembra", Value=""},
+                    },
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Raza
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("raza", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="HOLSTEIN", Value=""},
+                        new SelectListItem{Text="JERSEY", Value=""},
+                        new SelectListItem{Text="AYRSHIRE", Value=""}
+                    },
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+        <div class="form-group">
+            <span class="col-md-2">
+                Edad
+            </span>
+            <span class="col-md-6">
+                @Html.TextBox("edad", null, new { @class = "form-control", placeholder = "ingrese edad" })
+            </span>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2">
+                Tipo
+            </span>
+            <span class="col-md-6">
+                @Html.DropDownList("tipo", new List<SelectListItem>
+                    {
+                        new SelectListItem{Text="Vaca", Value=""},
+                        new SelectListItem{Text="Ternera", Value=""},
+                        new SelectListItem{Text="Ternero", Value=""},
+                        new SelectListItem{Text="Toro", Value=""},
+                        new SelectListItem{Text="Buey", Value=""}
+                    },
+                    new { @class = "form-control" }
+                    )
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Enviar formulario</button>
+        </div>
+
+    }
+
+</fieldset>
+

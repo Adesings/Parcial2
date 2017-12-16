@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Cooprimsem.Models.Vacas>
+@{
+    ViewData["Title"] = "Listado";
+}
+
+<h2>Listado de Animales</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+    <th>Diio</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Edad</th>
+    <thead>Tipo</thead>
+    <th>Ver</th>
+    </thead>
+    <tbody>
+        @foreach (Cooprimsem.Models.Vacas animal in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(item => animal.Diio)</td>
+                <td>@Html.DisplayFor(item => animal.nombre)</td>
+                <td>@Html.DisplayFor(item => animal.sexo)</td>
+                <td>@Html.DisplayFor(item => animal.raza)</td>
+                <td>@Html.DisplayFor(item => animal.edad)</td>
+                <td>@Html.DisplayFor(item => animal.tipo)</td>
+                <td>@Html.ActionLink("Visualizar", "Ver Ficha", new { diio = animal.Diio })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
